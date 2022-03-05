@@ -8,16 +8,16 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.4.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_http_redirect_sg"></a> [http\_redirect\_sg](#module\_http\_redirect\_sg) | ./security_group | n/a |
-| <a name="module_http_sg"></a> [http\_sg](#module\_http\_sg) | ./security_group | n/a |
-| <a name="module_https_sg"></a> [https\_sg](#module\_https\_sg) | ./security_group | n/a |
-| <a name="module_ssh_sg"></a> [ssh\_sg](#module\_ssh\_sg) | ./security_group | n/a |
+| <a name="module_http_redirect_sg"></a> [http\_redirect\_sg](#module\_http\_redirect\_sg) | ./modules/security_group | n/a |
+| <a name="module_http_sg"></a> [http\_sg](#module\_http\_sg) | ./modules/security_group | n/a |
+| <a name="module_https_sg"></a> [https\_sg](#module\_https\_sg) | ./modules/security_group | n/a |
+| <a name="module_ssh_sg"></a> [ssh\_sg](#module\_ssh\_sg) | ./modules/security_group | n/a |
 
 ## Resources
 
@@ -51,11 +51,15 @@ No requirements.
 | [aws_route_table_association.private_1](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association) | resource |
 | [aws_route_table_association.public_0](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association) | resource |
 | [aws_route_table_association.public_1](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association) | resource |
+| [aws_s3_bucket.alb_log](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
+| [aws_s3_bucket_lifecycle_configuration.alb_log](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_lifecycle_configuration) | resource |
+| [aws_s3_bucket_policy.alb_log](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_policy) | resource |
 | [aws_subnet.private_0](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
 | [aws_subnet.private_1](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
 | [aws_subnet.public_0](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
 | [aws_subnet.public_1](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
 | [aws_vpc.is-hoku](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc) | resource |
+| [aws_iam_policy_document.alb_log](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 | [aws_route53_zone.is-hoku](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/route53_zone) | data source |
 | [aws_ssm_parameter.amzn2_ami](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ssm_parameter) | data source |
 
