@@ -6,7 +6,7 @@ resource "aws_lb_listener" "http" {
     type = "fixed-response"
     fixed_response {
       content_type = "text/plain"
-      message_body = "This is a [HTTP]."
+      message_body = "This is [HTTP]."
       status_code  = "200"
     }
   }
@@ -22,7 +22,7 @@ resource "aws_lb_listener" "https" {
     type = "fixed-response"
     fixed_response {
       content_type = "text/plain"
-      message_body = "This is a [HTTPS]."
+      message_body = "This is [HTTPS]."
       status_code  = "200"
     }
   }
