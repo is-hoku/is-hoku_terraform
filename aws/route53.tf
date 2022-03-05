@@ -3,8 +3,8 @@ data "aws_route53_zone" "is-hoku" {
 }
 
 resource "aws_route53_record" "is-hoku" {
-  zone_id = aws_route53_zone.is-hoku.zone_id
-  name    = aws_route53_zone.is-hoku.name
+  zone_id = data.aws_route53_zone.is-hoku.zone_id
+  name    = data.aws_route53_zone.is-hoku.name
   type    = "A"
   alias {
     name                   = aws_lb.is-hoku.dns_name
@@ -14,8 +14,8 @@ resource "aws_route53_record" "is-hoku" {
 }
 
 resource "aws_route53_record" "kintai" {
-  zone_id = aws_route53_zone.is-hoku.zone_id
-  name    = format("kintai.%s", aws_route53_zone.is-hoku.name)
+  zone_id = data.aws_route53_zone.is-hoku.zone_id
+  name    = format("kintai.%s", data.aws_route53_zone.is-hoku.name)
   type    = "A"
   alias {
     name                   = aws_lb.is-hoku.dns_name
@@ -36,6 +36,6 @@ resource "aws_route53_record" "is-hoku_certificate" {
   name            = each.value.name
   records         = [each.value.record]
   type            = each.value.type
-  zone_id         = aws_route53_zone.is-hoku.id
+  zone_id         = data.aws_route53_zone.is-hoku.id
   ttl             = 60
 }
