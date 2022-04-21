@@ -13,17 +13,6 @@ resource "aws_route53_record" "is-hoku" {
   }
 }
 
-resource "aws_route53_record" "kintai" {
-  zone_id = data.aws_route53_zone.is-hoku.zone_id
-  name    = format("kintai.%s", data.aws_route53_zone.is-hoku.name)
-  type    = "A"
-  alias {
-    name                   = aws_lb.is-hoku.dns_name
-    zone_id                = aws_lb.is-hoku.zone_id
-    evaluate_target_health = true
-  }
-}
-
 resource "aws_route53_record" "is-hoku_certificate" {
   for_each = {
     for dvo in aws_acm_certificate.is-hoku.domain_validation_options : dvo.domain_name => {
